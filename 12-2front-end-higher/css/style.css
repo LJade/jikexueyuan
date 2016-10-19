@@ -1,0 +1,32 @@
+
+body{
+    font-size: 15px;
+    font-family: "Microsoft YaHei UI";
+    color: #333333;
+    letter-spacing: 1px;
+}
+h1{
+    text-align: center;
+}
+dl{
+    background: #fefefe;
+    width:800px;
+    border: 1px solid #cccccc;
+    margin: 20px auto;
+    padding: 10px;
+
+}
+dt{
+    font-size: 18px;
+    color: #000;
+}
+dd{
+    padding-top: 15px;
+}
+p.foot{
+    text-indent: 33px;
+    width: 600px;
+    text-align: justify;
+    margin: 15px auto;
+
+}

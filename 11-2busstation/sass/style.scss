@@ -1,0 +1,150 @@
+
+html{
+  font-size: 65.2%;
+}
+body{
+  font-size: 1.4rem;
+  color: #333;
+}
+$small-font:1rem;
+$large-font:3.6rem;
+$red-color:#DC4040;
+$black-color:#000000;
+
+@mixin clear-float{
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+@mixin center-block($margin-h:0){
+  margin: $margin-h auto;
+}
+@mixin text-center($height:5rem){
+  height: $height;
+  line-height: $height;
+  text-align: center;
+}
+.container{
+  h1.local-station{
+    @include center-block(2rem);
+    width: 90%;
+    @include text-center(5rem);
+    border-radius: 50%;
+    color:#ffffff;
+    font-size: $large-font;
+    background: #627987;
+  }
+}
+.station{
+  width: 100%;
+  padding: 1rem 0;
+  border-top: 3px solid #59515C;
+  position: relative;
+  @include clear-float;
+  .left,.right{
+    float: left;
+    overflow: hidden;
+  }
+  .left{
+    width: 23%;
+    text-align: center;
+    h1.station-line{
+      font-size: 5.6rem;
+      margin: 0;
+      color: $red-color;
+      font-weight: 800;
+    }
+    h4{
+      font-size: 1.6rem;
+      margin: 1rem auto;
+    }
+    >p{
+      color:$red-color;
+      font-size: $small-font;
+    }
+  }
+  .right{
+    width: 77%;
+    .station-info{
+      position: relative;
+      text-align: center;
+      >span{
+        font-size: 2.1rem;
+      }
+      >h2,>p{
+        display: inline-block;
+        margin-top:1rem ;
+        margin-bottom: 1rem;
+      }
+      >h2{
+        font-size: 2.8rem;
+      }
+      >em{
+        font-weight: 600;
+        font-style: normal;
+        display: inline-block;
+        width: 1.4rem;
+        margin: 0 0.5rem;
+      }
+      >p{
+        span{
+          display: block;
+          font-size: $small-font+0.2rem;
+        }
+      }
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-bottom: 6px solid $red-color;
+        border-right: 20px solid transparent;
+        right: 20%;
+        bottom: 0;
+      }
+      &:after{
+        content: '';
+        display: block;
+        width: 60%;
+        height: 0.2rem;
+        position: absolute;
+        background: $red-color;
+        left: 50%;
+        margin-left:-30% ;
+      }
+    }
+    .stations{
+      background: #BBDDF1;
+      text-align: center;
+      padding: 0.5rem 0.5rem;
+      margin-top: 1rem;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      height: 10rem;
+      overflow: hidden;
+      span{
+        width: 1rem;
+        font-size: 1rem;
+        display: inline-block;
+        color: #000000;
+        text-align-last: justify;
+        writing-mode:vertical-rl;
+      }
+      span.curStation{
+        color: $red-color;
+      }
+    }
+  }
+}
+.post{
+  width: 100%;
+  img{
+    width: 100%;
+  }
+}
+
+

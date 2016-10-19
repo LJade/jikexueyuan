@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>高级前端面试汇总</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>html</h1>
+    <dl>
+        <dt>题目：渐进增强和优雅降级
+        </dt>
+        <dd>答：渐进增强 ：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。
+            <br>优雅降级 ：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：简述一下src与href的区别。
+
+</dt>
+        <dd>
+            答：
+
+src用于替换当前元素，href用于在当前文档和引用资源之间确立联系。<br>
+
+src是source的缩写，指向外部资源的位置，指向的内容将会嵌入到文档中当前标签所在位置；在请求src资源时会将其指向的资源下载并应用到文档内，例如js脚本，img图片和frame等元素。<br>
+
+    script src =”js.js”<br>
+
+当浏览器解析到该元素时，会暂停其他资源的下载和处理，直到将该资源加载、编译、执行完毕，图片和框架等元素也如此，类似于将所指向资源嵌入当前标签内。这也是为什么将js脚本放在底部而不是头部。<br>
+
+href是Hypertext Reference的缩写，指向网络资源所在位置，建立和当前元素（锚点）或当前文档（链接）之间的链接，如果我们在文档中添加<br>
+
+link href=”common.css” rel=”stylesheet”<br>
+
+那么浏览器会识别该文档为css文件，就会并行下载资源并且不会停止对当前文档的处理。这也是为什么建议使用link方式来加载css，而不是使用@import方式。
+        </dd>
+    </dl>
+
+    <dl>
+        <dt>题目：知道的网页制作会用到的图片格式有哪些？</dt>
+        <dd>
+
+答：
+
+png-8，png-24，jpeg，gif，svg。<br>
+
+但是上面的那些都不是面试官想要的最后答案。面试官希望听到是Webp。（是否有关注新技术，新鲜事物）<br>
+
+科普一下Webp：WebP格式，谷歌（google）开发的一种旨在加快图片加载速度的图片格式。图片压缩体积大约只有JPEG的2/3，并能节省大量的服务器带宽资源和数据空间。Facebook Ebay等知名网站已经开始测试并使用WebP格式。<br>
+
+在质量相同的情况下，WebP格式图像的体积要比JPEG格式图像小40%</dd>
+    </dl>
+
+
+
+    <dl>
+        <dt>题目：HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，功能的优化和改进。
+        </dt>
+        <dd>答： 绘画  canvas 元素<br>
+
+  用于媒介回放的 video 和 audio 元素<br>
+
+  本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失；<br>
+  sessionStorage 的数据在浏览器关闭后自动删除<br>
+
+  语意化更好的内容元素，比如 article、footer、header、nav、section<br>
+
+  表单控件，calendar、date、time、email、url、search<br>
+
+  CSS3实现圆角，阴影，对文字加特效，增加了更多的CSS选择器  多背景 rgba<br>
+
+  新的技术webworker websockt<br>
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：iframe有那些缺点？
+        </dt>
+        <dd>*iframe会阻塞主页面的Onload事件；<br>
+
+    *iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。
+    使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript
+    动态给iframe添加src属性值，这样可以可以绕开以上两个问题。<br>
+        </dd>
+    </dl>
+
+     
+    <h1>CSS</h1>
+
+<dl>
+        <dt>题目：浏览器的内核分别是什么?经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，hack 的技巧 ？
+        </dt>
+        <dd>答：  * IE浏览器的内核Trident、 Mozilla的Gecko、google的WebKit、Opera内核Presto；<br>
+
+    * png24为的图片在iE6浏览器上出现背景，解决方案是做成PNG8.<br>
+
+    * 浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。<br>
+
+    * IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。<br>
+
+      解决方案是在float的标签样式控制中加入 display:inline;将其转化为行内属性。<br>
+
+    * 浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px; <br>
+
+     //这种情况之下IE会产生20px的距离，这时需要设置display:inline; //使浮动忽略}<br>
+
+    * 渐进识别的方式，从总体中逐渐排除局部。 <br>
+
+    * 首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。 <br>
+      接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。<br>
+
+     ```css
+          .bb{
+           background-color:#f1ee18;/*所有识别*/
+          .background-color:#00deff\9; /*IE6、7、8识别*/
+          +background-color:#a200ff;/*IE6、7识别*/
+          _background-color:#1e0bd1;/*IE6识别*/
+
+          }<br>
+       ```
+
+    *  IE下,可以使用获取常规属性的方法来获取自定义属性,
+       也可以使用getAttribute()获取自定义属性;
+       Firefox下,只能使用getAttribute()获取自定义属性. 
+       解决方法:统一通过getAttribute()获取自定义属性.<br>
+
+    *  IE下,even对象有x,y属性,但是没有pageX,pageY属性; 
+      Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.<br>
+
+    * （条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
+        </dd>
+    </dl>
+
+
+    <dl>
+        <dt>题目：超链接访问过后hover样式就不出现的问题是什么？如何解决？</dt>
+        <dd>被点击访问过的超链接样式不在具有hover和active了,解决方法是改变CSS属性的排列顺序: L-V-H-A（link,visited,hover,active）</dd>
+    </dl>
+
+
+    <dl>
+        <dt>题目：什么是外边距重叠？重叠的结果是什么？</dt>
+        <dd>答：外边距重叠就是margin-collapse。<br>
+
+在CSS当中，相邻的两个盒子（可能是兄弟关系也可能是祖先关系）的外边距可以结合成一个单独的外边距。这种合并外边距的方式被称为折叠，并且因而所结合成的外边距称为折叠外边距。<br>
+
+折叠结果遵循下列计算规则：<br>
+
+两个相邻的外边距都是正数时，折叠结果是它们两者之间较大的值。<br>
+两个相邻的外边距都是负数时，折叠结果是两者绝对值的较大值。<br>
+两个外边距一正一负时，折叠结果是两者的相加的和。</dd>
+    </dl>
+    <dl>
+        <dt>题目：rgba()和opacity的透明效果有什么不同？</dt>
+        <dd>答：rgba()和opacity都能实现透明效果，但最大的不同是opacity作用于元素，以及元素内的所有内容的透明度，
+
+而rgba()只作用于元素的颜色或其背景色。（设置rgba透明的元素的子元素不会继承透明效果！）</dd>
+    </dl>
+    <dl>
+        <dt>题目：Sass、LESS是什么？大家为什么要使用他们？</dt>
+        <dd>答：他们是CSS预处理器。他是CSS上的一种抽象层。他们是一种特殊的语法/语言编译成CSS。<br>
+
+例如Less是一种动态样式语言. 将CSS赋予了动态语言的特性，如变量，继承，运算， 函数. LESS 既可以在客户端上运行 (支持IE 6+, Webkit, Firefox)，也可一在服务端运行 (借助 Node.js)。<br>
+
+为什么要使用它们？<br>
+
+结构清晰，便于扩展。<br>
+可以方便地屏蔽浏览器私有语法差异。这个不用多说，封装对浏览器语法差异的重复处理，减少无意义的机械劳动。<br>
+可以轻松实现多重继承。<br>
+完全兼容 CSS 代码，可以方便地应用到老项目中。LESS 只是在 CSS 语法上做了扩展，所以老的 CSS 代码也可以与 LESS 代码一同编译。</dd>
+    </dl>
+
+
+    <h1>JS</h1>
+    <dl>
+        <dt>题目：如何解决跨域问题</dt>
+        <dd>答：原理是：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。 由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数，从而解决了跨域的数据请求。 优点是兼容性好，简单易用，支持浏览器与服务器双向通信。缺点是只支持GET请求。
+            <h4>JSONP：</h4>json+padding（内填充），顾名思义，就是把JSON填充到一个盒子里
+            <code>
+    function createJs(sUrl){
+
+        var oScript = document.createElement('script');
+        oScript.type = 'text/javascript';
+        oScript.src = sUrl;
+        document.getElementsByTagName('head')[0].appendChild(oScript);
+    }
+
+    createJs('jsonp.js');
+
+    box({
+       'name': 'test'
+    });
+
+    function box(json){
+        alert(json.name);
+    }
+    </code>
+            <br>
+            <h4>CORS</h4> 服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。
+            <br>
+            <h4>通过修改document.domain来跨子域</h4> 将子域和主域的document.domain设为同一个主域.前提条件：这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域 主域相同的使用document.domain
+            <br>
+            <h4>使用window.name来进行跨域</h4> window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的
+            <h4>使用HTML5中新引进的window.postMessage方法来跨域传送数据</h4> 还有flash、在服务器上设置代理页面等跨域方式。个人认为window.name的方法既不复杂，也能兼容到几乎所有浏览器，这真是极好的一种跨域方法。
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：对前端模块化的认识
+        </dt>
+        <dd>答：AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。
+            <br> CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。
+            <br> AMD 是提前执行，CMD 是延迟执行。
+            <br> AMD推荐的风格通过返回一个对象做为模块对象，CommonJS的风格通过对module.exports或exports的属性赋值来达到暴露模块对象的目的。
+            <br> CMD模块方式
+            <br> define(function(require, exports, module) { // 模块代码 });
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：Javascript垃圾回收方法
+        </dt>
+        <dd>答：
+            <h4>标记清除（mark and sweep）</h4> 这是JavaScript最常见的垃圾回收方式，当变量进入执行环境的时候，比如函数中声明一个变量，垃圾回收器将其标记为“进入环境”，当变量离开环境的时候（函数执行结束）将其标记为“离开环境”。
+            <br> 垃圾回收器会在运行的时候给存储在内存中的所有变量加上标记，然后去掉环境中的变量以及被环境中变量所引用的变量（闭包），在这些完成之后仍存在标记的就是要删除的变量了
+            <br>
+            <h4>引用计数(reference counting)</h4> 在低版本IE中经常会出现内存泄露，很多时候就是因为其采用引用计数方式进行垃圾回收。引用计数的策略是跟踪记录每个值被使用的次数，当声明了一个 变量并将一个引用类型赋值给该变量的时候这个值的引用次数就加1，如果该变量的值变成了另外一个，则这个值得引用次数减1，当这个值的引用次数变为0的时 候，说明没有变量在使用，这个值没法被访问了，因此可以将其占用的空间回收，这样垃圾回收器会在运行的时候清理掉引用次数为0的值占用的空间。
+            <br> 在IE中虽然JavaScript对象通过标记清除的方式进行垃圾回收，但BOM与DOM对象却是通过引用计数回收垃圾的， 也就是说只要涉及BOM及DOM就会出现循环引用问题。
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：ES6的了解
+        </dt>
+        <dd>答：类型选择符E { sRules } 新增模板字符串（为JavaScript提供了简单的字符串插值功能）、箭头函数（操作符左边为输入的参数，而右边则是进行的操作以及返回的值Inputs=>outputs。）、for-of（用来遍历数据—例如数组中的值。）arguments对象可被不定参数和默认参数完美代替。ES6将promise对象纳入规范，提供了原生的Promise对象。增加了let和const命令，用来声明变量。增加了块级作用域。let命令实际上就增加了块级作用域。ES6规定，var命令和function命令声明的全局变量，属于全局对象的属性；let命令、const命令、class命令声明的全局变量，不属于全局对象的属性。。还有就是引入module模块的概念
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：WEB应用从服务器主动推送Data到客户端有那些方式？
+        </dt>
+        <dd>答：Javascript数据推送
+            <br> 1、Commet：基于HTTP长连接的服务器推送技术
+            <br> 2、基于WebSocket的推送方案
+            <br> 3、SSE（Server-Send Event）：服务器推送数据新方式
+            <br>
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：javascript对象的几种创建方式
+        </dt>
+        <dd>答：1，工厂模式
+            <br> 2，构造函数模式
+            <br> 3，原型模式
+            <br> 4，混合构造函数和原型模式
+            <br> 5，动态原型模式
+            <br> 6，寄生构造函数模式
+            <br> 7，稳妥构造函数模式
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：javascript继承的6种方法
+        </dt>
+        <dd>答：1，原型链继承
+            <br> 2，借用构造函数继承
+            <br> 3，组合继承(原型+借用构造)
+            <br> 4，原型式继承
+            <br> 5，寄生式继承
+            <br> 6，寄生组合式继承
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：说说你对作用域链的理解</dt>
+        <dd>答：作用域链的作用是保证执行环境里有权访问的变量和函数是有序的，作用域链的变量只能向上访问，变量访问到window对象即被终止，作用域链向下访问变量是不被允许的。
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：创建ajax过程</dt>
+        <dd>(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.
+            <br> (2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.
+            <br> (3)设置响应HTTP请求状态变化的函数.
+            <br> (4)发送HTTP请求.
+            <br> (5)获取异步调用返回的数据.
+            <br> (6)使用JavaScript和DOM实现局部刷新
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：Web Worker 和webSocket
+        </dt>
+        <dd>答：
+            <h4>worker主线程:</h4> 1.通过 worker = new Worker( url ) 加载一个JS文件来创建一个worker，同时返回一个worker实例。
+            <br> 2.通过worker.postMessage( data ) 方法来向worker发送数据。
+            <br> 3.绑定worker.onmessage方法来接收worker发送过来的数据。
+            <br> 4.可以使用 worker.terminate() 来终止一个worker的执行。
+            <br> WebSocket是Web应用程序的传输协议，它提供了双向的，按序到达的数据流。他是一个HTML5协议，WebSocket的连接是持久的，他通过在客户端和服务器之间保持双工连接，服务器的更新可以被及时推送给客户端，而不需要客户端以一定时间间隔去轮询。
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：有这样一个URL：http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e，请写一段JS程序提取URL中的各个GET参数(参数名和参数个数不确定)，将其按key-value形式返回到一个json结构中，如{a:’1′, b:’2′, c:”, d:’xxx’, e:undefined}。</dt>
+        <dd>
+            function serilizeUrl(url) {
+                    var result = {};
+                    url = url.split("?")[1];
+                    var map = url.split("&");
+                    for(var i = 0, len = map.length; i < len; i++) {
+                        result[map[i].split("=")[0]] = map[i].split("=")[1];
+                    }
+                    return result;
+            }
+        </dd>
+    </dl>
+
+
+    <dl>
+        <dt>题目：对Node的优点和缺点提出了自己的看法</dt>
+        <dd>
+            答：*（优点）因为Node是基于事件驱动和无阻塞的，所以非常适合处理并发请求，
+      因此构建在Node上的代理服务器相比其他技术实现（如Ruby）的服务器表现要好得多。
+      此外，与Node代理服务器交互的客户端代码是由javascript语言编写的，
+      因此客户端和服务器端都用同一种语言编写，这是非常美妙的事情。<br>
+
+    *（缺点）Node是一个相对新的开源项目，所以不太稳定，它总是一直在变，
+      而且缺少足够多的第三方库支持。看起来，就像是Ruby/Rails当年的样子。
+        </dd>
+    </dl>
+    <h1>其他</h1>
+    <dl>
+        <dt>题目：常见web安全及防护原理</dt>
+        <dd>答：
+            <h4>sql注入原理</h4> 就是通过把SQL命令插入到Web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。 总的来说有以下几点：
+            <br> 1.永远不要信任用户的输入，要对用户的输入进行校验，可以通过正则表达式，或限制长度，对单引号和双"-"进行转换等。
+            <br> 2.永远不要使用动态拼装SQL，可以使用参数化的SQL或者直接使用存储过程进行数据查询存取。
+            <br> 3.永远不要使用管理员权限的数据库连接，为每个应用使用单独的权限有限的数据库连接。
+            <br> 4.不要把机密信息明文存放，请加密或者hash掉密码和敏感的信息。
+            <br>
+            <h4>XSS原理及防范</h4> Xss(cross-site scripting)攻击指的是攻击者往Web页面里插入恶意 html标签或者javascript代码。比如：攻击者在论坛中放一个 看似安全的链接，骗取用户点击后，窃取cookie中的用户私密信息；或者攻击者在论坛中加一个恶意表单， 当用户提交表单的时候，却把信息传送到攻击者的服务器中，而不是用户原本以为的信任站点。
+            <h4>XSS防范方法</h4> 首先代码里对用户输入的地方和变量都需要仔细检查长度和对”
+            <”,”>”,”;”,”’”等字符做过滤；其次任何内容写到页面之前都必须加以encode，避免不小心把html tag 弄出来。这一个层面做好，至少可以堵住超过一半的XSS 攻击。
+                <br> 首先，避免直接在cookie 中泄露用户隐私，例如email、密码等等。
+                <br> 其次，通过使cookie 和系统ip 绑定来降低cookie
+                <br>泄露后的危险。这样攻击者得到的cookie 没有实际价值，不可能拿来重放。 如果网站不需要再浏览器端对cookie 进行操作，可以在Set-Cookie 末尾加上HttpOnly 来防止javascript 代码直接获取cookie 。
+                <br> 尽量采用POST 而非GET 提交表单
+                <br>
+                <h4>XSS与CSRF有什么区别吗？</h4> XSS是获取信息，不需要提前知道其他用户页面的代码和数据包。CSRF是代替用户完成指定的动作，需要知道其他用户页面的代码和数据包。
+                <br> 要完成一次CSRF攻击，受害者必须依次完成两个步骤：
+                <br> 登录受信任网站A，并在本地生成Cookie。
+                <br> 在不登出A的情况下，访问危险网站B。
+                <br>
+                <h4>CSRF的防御</h4> 服务端的CSRF方式方法很多样，但总的思想都是一致的，就是在客户端页面增加伪随机数。 通过验证码的方法
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：HTTP和HTTPS
+        </dt>
+        <dd>答：HTTP协议通常承载于TCP协议之上，在HTTP和TCP之间添加一个安全协议层（SSL或TSL），这个时候，就成了我们常说的HTTPS。
+            <br> 默认HTTP的端口号为80，HTTPS的端口号为443。
+            <br>
+            <h4>为什么HTTPS安全</h4> 因为网络请求需要中间有很多的服务器路由器的转发。中间的节点都可能篡改信息，而如果使用HTTPS，密钥在你和终点站才有。https之所以比http安全，是因为他利用ssl/tls协议传输。它包含证书，卸载，流量转发，负载均衡，页面适配，浏览器适配，refer传递等。保障了传输过程的安全性
+        </dd>
+    </dl>
+    <dl>
+        <dt>题目：谈谈以前端角度出发做好SEO需要考虑什么？</dt>
+        <dd>
+            <h4>了解搜索引擎如何抓取网页和如何索引网页</h4>
+你需要知道一些搜索引擎的基本工作原理，各个搜索引擎之间的区别，搜索机器人（SE robot 或叫 web crawler）如何进行工作，搜索引擎如何对搜索结果进行排序等等。
+
+<h4>Meta标签优化</h4>
+主要包括主题（Title)，网站描述(Description)，和关键词（Keywords）。还有一些其它的隐藏文字比如Author（作者），Category（目录），Language（编码语种）等。
+
+<h4>如何选取关键词并在网页中放置关键词</h4>
+搜索就得用关键词。关键词分析和选择是SEO最重要的工作之一。首先要给网站确定主关键词（一般在5个上下），然后针对这些关键词进行优化，包括关键词密度（Density），相关度（Relavancy），突出性（Prominency）等等。
+
+<h4>了解主要的搜索引擎</h4>
+虽然搜索引擎有很多，但是对网站流量起决定作用的就那么几个。比如英文的主要有Google，Yahoo，Bing等；中文的有百度，搜狗，有道等。不同的搜索引擎对页面的抓取和索引、排序的规则都不一样。还要了解各搜索门户和搜索引擎之间的关系，比如AOL网页搜索用的是Google的搜索技术，MSN用的是Bing的技术。
+
+<h4>主要的互联网目录</h4>
+Open Directory自身不是搜索引擎，而是一个大型的网站目录，他和搜索引擎的主要区别是网站内容的收集方式不同。目录是人工编辑的，主要收录网站主页；搜索引擎是自动收集的，除了主页外还抓取大量的内容页面。
+
+<h4>按点击付费的搜索引擎</h4>
+搜索引擎也需要生存，随着互联网商务的越来越成熟，收费的搜索引擎也开始大行其道。最典型的有Overture和百度，当然也包括Google的广告项目Google Adwords。越来越多的人通过搜索引擎的点击广告来定位商业网站，这里面也大有优化和排名的学问，你得学会用最少的广告投入获得最多的点击。
+
+<h4>搜索引擎登录</h4>
+网站做完了以后，别躺在那里等着客人从天而降。要让别人找到你，最简单的办法就是将网站提交（submit）到搜索引擎。如果你的是商业网站，主要的搜索引擎和目录都会要求你付费来获得收录（比如Yahoo要299美元），但是好消息是（至少到目前为止）最大的搜索引擎Google目前还是免费，而且它主宰着60％以上的搜索市场。
+
+<h4>链接交换和链接广泛度（Link Popularity）</h4>
+网页内容都是以超文本（Hypertext）的方式来互相链接的，网站之间也是如此。除了搜索引擎以外，人们也每天通过不同网站之间的链接来Surfing（“冲浪”）。其它网站到你的网站的链接越多，你也就会获得更多的访问量。更重要的是，你的网站的外部链接数越多，会被搜索引擎认为它的重要性越大，从而给你更高的排名。
+
+<h4>合理的标签使用</h4>
+        </dd>
+    </dl>
+</body>
+
+</html>

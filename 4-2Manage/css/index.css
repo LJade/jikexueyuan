@@ -1,0 +1,47 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: "Microsoft YaHei";
+    font-size: 1.6rem;
+    color:#333;
+    box-sizing: border-box;
+    background-size:cover;
+    background: #CCC3A6;
+    min-width:68rem;
+    min-height: 54rem;
+}
+.no-padding{
+    padding:0;
+}
+i{
+    margin-right: 0.5rem;
+}
+#main-content{
+height: 100%;
+}
+.myNav{
+    background-color: #CDB88E;
+}
+#main-content #navigation  .list-group>a{
+    background: #ccc3a6;
+    color: #333333;
+    white-space: nowrap;
+
+}
+#main-content #navigation  .list-group>a i{
+    color: #534E4E;
+}
+#main-content .jumbotron{
+    height:45rem;
+    background: #CCC3A6 url("../images/bannerbg.jpg") no-repeat;
+    background-size: cover;
+    padding-top: 12rem;
+    color: #ffffff;
+}
+#main-content .jumbotron h2{
+    margin-top: 4rem;
+}
+.admin{
+    color:#00A2E8!important;
+}

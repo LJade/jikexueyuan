@@ -1,0 +1,457 @@
+/*页面初始化*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.4rem !important;
+    background: #eeeff0;
+    font-family: Arial, Helvetica, sans-serif !important;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    float: left;
+}
+
+a {
+    color: #262626;
+    text-decoration: none;
+}
+/*初始化结束*/
+
+
+/*移动端样式*/
+#mobile {
+    padding: 1rem;
+}
+
+.weather-icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: url(../imgs/icon/weather.png) no-repeat;
+    background-size: 2rem 2rem;
+    vertical-align: sub;
+}
+
+.body-top {
+    color: #8c8c8c;
+    width: 100%;
+    height: 4rem;
+    text-align: left;
+}
+
+.body-top .header-weather {
+    float: left;
+}
+
+.body-top .header-weather div {
+    display: inline-block;
+}
+
+.body-top .header-weather div:nth-child(2) {
+    font-size: 2rem;
+}
+
+.body-top .header-weather div:nth-child(3) {
+    font-size: 1.1rem;
+    vertical-align: sub;
+}
+
+.body-top .header-weather div:nth-child(3):last-child {
+    color: #999;
+}
+
+.skin-box {
+    float: right;
+
+}
+
+.m-icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+
+}
+
+.m-icon-user {
+    background: url("../imgs/icon/user.png") no-repeat;
+    background-size: 2rem 2rem;
+}
+
+.m-icon-skin {
+    background: url("../imgs/icon/skin.png") no-repeat;
+    background-size: 2rem 2rem;
+    margin-left: 1rem;
+}
+
+.body-search {
+    padding-top: 1.5rem;
+}
+
+#mobile form {
+    width: 98%;
+    margin: 2rem auto 0;
+}
+
+.body-search .inputBox {
+    position: relative;
+    width: 100%;
+    line-height: 3.4rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 3.4rem;
+}
+
+.inputBox input[name="mSearchInput"] {
+    outline: 0;
+    height: 3.4rem;
+    width: 100%;
+    border-radius: 0;
+    padding: 0.7rem 4.2rem 0.7rem 0.6rem;
+    resize: none;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    border:none;
+}
+
+.input-icon {
+
+    display: inline-block;
+    background: url(../imgs/mmsicon.png) no-repeat 1px 0;
+    position: absolute;
+    top: 10px;
+    height: 20px;
+    left: 210px;
+    width: 14px;
+    background-size: 33px 19px;
+}
+
+.input-icon:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    border: 4px solid transparent;
+    border-top-color: #717077
+}
+
+.inputBox button {
+    position: absolute;
+
+    right: -1px;
+    width: 8.5rem;
+    height: 3.4rem;
+    background: #38f;
+    color: #fff;
+    white-space: nowrap;
+    letter-spacing: -1px;
+    font-size: 1.6rem;
+    border: none;
+}
+
+.appList {
+    margin: 0 0 1rem 0;
+}
+
+.appList div.iconList {
+    width: 15%;
+    display: inline-block;
+    padding-top: 4rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.appList div.iconList:nth-child(1) {
+    background: url("../imgs/icon/news.png") no-repeat center center;
+    background-size: 2.5rem 2.5rem;
+}
+
+.appList div.iconList:nth-child(2) {
+    background: url("../imgs/icon/book.png") no-repeat center center;
+    background-size: 2rem 2rem;
+}
+
+.appList div.iconList:nth-child(3) {
+    background: url("../imgs/icon/video.png") no-repeat center center;
+    background-size: 2rem 2rem;
+}
+
+.appList div.iconList:nth-child(4) {
+    background: url("../imgs/icon/nuomi.png") no-repeat center center;
+    background-size: 2rem 2rem;
+}
+
+.appList div.iconList:nth-child(5) {
+    background: url("../imgs/icon/map.png") no-repeat center center;
+    background-size: 2.5rem 2.5rem;
+}
+
+.appList div.iconList:nth-child(6) {
+    background: url("../imgs/icon/more.png") no-repeat center center;
+    background-size: 2rem 2rem;
+
+}
+
+.appList div.iconList:nth-child(6)::after {
+    content: "";
+    clear: both;
+}
+
+.divBox {
+    background: #ffffff;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.divBox .boxTitle {
+    line-height: 4rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #999;
+    text-align: left;
+
+}
+
+.divBox .boxTitle a {
+    float: right;
+
+}
+
+.divBox .boxTitle a:after {
+    content: "|";
+    color: #F0F0F0;
+    margin-left: 0.5rem;
+
+}
+
+.icon-reload {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: url("../imgs/icon/reload.png") no-repeat;
+    background-size: 2rem 2rem;
+    vertical-align: sub;
+
+}
+
+.divBox i.icon-more2 {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: url("../imgs/icon/more1.png") no-repeat;
+    background-size: 2rem 2rem;
+    float: right;
+    margin-top: 1rem;
+
+}
+
+.icon-more3 {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: url("../imgs/icon/plus.png") no-repeat;
+    background-size: 2rem 2rem;
+}
+
+#mobile .myNav {
+    height: 7rem;
+}
+
+#mobile .myNav li {
+    width: 25%;
+    line-height: 2rem;
+    height: 4rem;
+}
+
+.hot {
+    height: 11rem;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.hot li {
+    width: 50%;
+    line-height: 2rem;
+    height: 4rem;
+}
+
+.box-tail {
+    text-align: right;
+    line-height: 1.8rem;
+}
+
+.box-tail a {
+    padding-right: 1.4rem;
+    font-size: 1.4rem;
+    color: #0058d2;
+}
+
+.baiduRecommend {
+    height: 17rem;
+    text-align: left;
+}
+
+.baiduRecommend li {
+    float: none;
+    line-height: 3rem;
+    height: 3rem;
+    border-bottom: 1px solid #F0F0F0;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+
+.baiduRecommend li:first-child {
+    height: 6rem;
+}
+
+.baiduRecommend li img {
+    float: left;
+    margin: 0.5rem;
+}
+
+.baiduRecommend li span {
+    display: inline-block;
+    float: right;
+    color: #999;
+    font-size: 1.2rem;
+}
+.service{
+    height: 12.5rem;
+}
+.service li{
+    width: 25%;
+    line-height: 2rem;
+    height: 6rem;
+    text-align: center;
+
+}
+.service li i{
+    display: block;
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 0;
+}
+.setLocation{
+    margin-top:1rem  ;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+.setLocation span{
+    display: inline-block;
+    padding: 3px 12px;
+    border:1px solid #D2D6DD;
+   float: right;
+    margin-top: -6px;
+}
+.setLocation .set-location-icon{
+    display: inline-block;
+    width: 1.7rem;
+    height: 1.7rem;
+    background: url("../imgs/icon/location.png") no-repeat;
+    background-size:1.7rem;
+    vertical-align: sub;
+    margin-right: 10px;
+}
+i.s-film{
+    background: url("../imgs/bg.png") no-repeat 0 0;
+}
+i.s-nuo{
+    background: url("../imgs/bg.png") no-repeat -90px 0;
+}
+
+i.s-easy-eat{
+    background: url("../imgs/bg.png") no-repeat -180px 0;
+}
+
+i.s-car{
+    background: url("../imgs/bg.png") no-repeat -270px 0;
+}
+
+i.s-hotel{
+    background: url("../imgs/bg.png") no-repeat 0 -70px;
+}
+
+i.s-food{
+    background: url("../imgs/bg.png") no-repeat -90px -70px;
+}
+
+i.s-sing{
+    background: url("../imgs/bg.png") no-repeat -180px -70px;
+}
+
+i.s-fill{
+    background: url("../imgs/bg.png") no-repeat -180px -70px;
+}
+i.more-icon4{
+    width:1.4rem;
+    height: 1.4rem;
+    display: inline-block;
+    background: url("../imgs/icon/more3.png") no-repeat;
+    background-size: 1.4rem;
+    vertical-align: middle;
+    margin-left: 2rem;
+}
+.showAll{
+    line-height: 2.5rem;
+    font-size: 1.7rem;
+    border-top: 1px solid #F0F0F0;
+    padding-top: 0.5rem;
+}
+.transport{
+    display: flex;
+    justify-content:center;
+     align-items:center;
+    height:10rem;
+   
+}
+.transport p{
+    line-height: 2rem;
+}
+.transport a{
+    color: #0058D2;
+}
+.myCard{
+    line-height: 2.5rem;
+}
+
+footer p{
+   font-size: 1.2rem;
+    color: #555;
+    text-align: left;
+    padding-left: 2rem;
+    line-height: 2.5rem;
+}
+i.redhot{
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url("../imgs/icon/hot.png")no-repeat;
+    background-size:2.4rem;
+    vertical-align: middle;
+}
+i.smallbaidu{
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.4rem;
+    background: url("../imgs/icon/smallbaidu.png")no-repeat;
+    background-size:1.4rem;
+    vertical-align: middle;
+}
+
+
+/*移动端结束*/
+
+

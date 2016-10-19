@@ -1,0 +1,37 @@
+extends layout
+block title
+  title 公交站牌
+block content
+  .container
+      h1.local-station #{station[0].localStation}
+      each line in station
+          .station
+              .left
+                  h1.station-line #{line.line}
+                  h4 下站：
+                      p #{line.nextStation}
+                  p 公交服务热线
+                      br
+                      | 872157854
+              .right
+                  .station-info
+                      span 开往
+                      h2 #{line.terminalStation}
+                      em 本站
+                      p
+                          span 首车：#{line.firstBus}
+                          span 末车：#{line.lastBus}
+                  .stations
+                      -var  local = line.localStation
+                      each station in line.stations
+                          if (station == local)
+                              span.curStation #{station}
+                          else
+                              span #{station}
+      .post
+          img(src="images/post.png")
+
+
+
+
+

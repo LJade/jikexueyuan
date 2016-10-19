@@ -1,0 +1,82 @@
+/* reset style start */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.2rem;
+    /* =12px */
+    font-family: arial;
+}
+
+body,header,section,footer,div,p,ul,img {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+
+/* reset style end */
+
+/* main style start */
+html{
+	height: 100%;
+}
+body{
+	text-align: center;
+	height: 100%;
+	min-width: 81rem;
+	min-height: 60rem;
+	height: 100%;
+	position: relative;
+}
+header{
+	position: absolute;
+    right: 0;
+    top: 0;
+}
+header ul li{
+	float: left;
+	padding: 1.5rem 0.8rem;
+	margin-left: 0.2rem;
+}
+header ul li a{
+	color: #333;
+	font-size: 1.3rem;
+	font-weight: bold;
+	line-height: 2.4rem;
+}
+header ul li a:hover{
+	color: #00c;
+}
+header ul li.thinLi a{
+	font-weight: normal;
+}
+header ul li.moreProduct a{
+	background-color: #3388FF;
+	padding: 0.3rem 0.3rem;
+}
+header ul li.moreProduct a{
+	color: #fff;
+	text-decoration: none;
+}
+
+section{
+	border:1px solid red;
+	width: 50%;
+	text-align: center;
+	height: 30rem;
+
+	margin-top: 10rem;
+	position: absolute;
+}
+
+
+
+footer{
+	position: absolute;
+}
+
+/* main  style end */

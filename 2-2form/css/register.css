@@ -1,0 +1,106 @@
+/* body{
+	font-size:14px; 
+} */
+
+body{
+	background: url('../imgs/beijing.gif') repeat;
+	padding: 20px;
+	margin: 0;
+	font-size: 12px;
+}
+.wrap{
+	width: 50%;
+	margin: 0 auto;
+	border-radius: 20px;
+	background-color: #fff;
+	padding: 10px 30px;
+	position: relative;
+	min-width: 780px;
+	min-height: 800px;
+}
+header{
+	padding: 0 40px;
+}
+header .logo{
+	width: 180px;
+	height: 76px;
+	cursor: pointer;
+	background: url('../imgs/qdjjlogo.gif') no-repeat;
+}
+header .headerTag{
+	position: absolute;
+	right: 70px;
+	top: 70px;
+}
+header .headerTag a{
+	color: #FF0099;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+section p.caption{
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+	text-align: center;
+
+}
+section  table caption{
+	font-size: 12px;
+	color: #333;
+	border: 1px solid ;
+	padding: 8px 10px;
+	background-clip:border-box;
+	background-color: #F9F9F9;
+	line-height: 1.5;
+	
+}
+table{
+	width: 700px;
+	border-collapse: collapse;
+	
+}
+table tr td:nth-child(1){
+whitespace:nowrap;
+width:120px;
+text-align:right;
+}
+span{
+	color: red;
+}
+label{
+	color: blue;
+}
+textarea{
+	width: 550px;
+	height: 100px;
+
+}
+input[type="text"]{
+	width: 200px;
+}
+td.title{
+	padding-left: 10px;
+	font-size: 14px;
+	font-weight: 800;
+	background: #EEEEEE;
+	color: #003399;
+	text-align: left!important;
+}
+label.checkLabel{
+	color: #333;
+}
+.btnArea {
+	padding:10px;
+}
+.btnArea button, input[type="submit"]{
+	font-size: 16px;
+	margin-left: 50px;
+	border-radius: 2px;
+	width: 80px;
+	line-height: 16px;
+	background: #CCC;
+	border:none;
+	color: #333;
+	padding: 10px 20px;
+}

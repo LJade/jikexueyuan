@@ -1,0 +1,109 @@
+html {
+  font-size: 65.2%; }
+
+body {
+  font-size: 1.4rem;
+  color: #333; }
+
+.container h1.local-station {
+  margin: 2rem auto;
+  width: 90%;
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 3.6rem;
+  background: #627987; }
+
+.station {
+  width: 100%;
+  padding: 1rem 0;
+  border-top: 3px solid #59515C;
+  position: relative; }
+  .station:after {
+    content: '';
+    display: block;
+    clear: both; }
+  .station .left, .station .right {
+    float: left;
+    overflow: hidden; }
+  .station .left {
+    width: 23%;
+    text-align: center; }
+    .station .left h1.station-line {
+      font-size: 5.6rem;
+      margin: 0;
+      color: #DC4040;
+      font-weight: 800; }
+    .station .left h4 {
+      font-size: 1.6rem;
+      margin: 1rem auto; }
+    .station .left > p {
+      color: #DC4040;
+      font-size: 1rem; }
+  .station .right {
+    width: 77%; }
+    .station .right .station-info {
+      position: relative;
+      text-align: center; }
+      .station .right .station-info > span {
+        font-size: 2.1rem; }
+      .station .right .station-info > h2, .station .right .station-info > p {
+        display: inline-block;
+        margin-top: 1rem;
+        margin-bottom: 1rem; }
+      .station .right .station-info > h2 {
+        font-size: 2.8rem; }
+      .station .right .station-info > em {
+        font-weight: 600;
+        font-style: normal;
+        display: inline-block;
+        width: 1.4rem;
+        margin: 0 0.5rem; }
+      .station .right .station-info > p span {
+        display: block;
+        font-size: 1.2rem; }
+      .station .right .station-info:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-bottom: 6px solid #DC4040;
+        border-right: 20px solid transparent;
+        right: 20%;
+        bottom: 0; }
+      .station .right .station-info:after {
+        content: '';
+        display: block;
+        width: 60%;
+        height: 0.2rem;
+        position: absolute;
+        background: #DC4040;
+        left: 50%;
+        margin-left: -30%; }
+    .station .right .stations {
+      background: #BBDDF1;
+      text-align: center;
+      padding: 0.5rem 0.5rem;
+      margin-top: 1rem;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      height: 10rem;
+      overflow: hidden; }
+      .station .right .stations span {
+        width: 1rem;
+        font-size: 1rem;
+        display: inline-block;
+        color: #000000;
+        text-align-last: justify;
+        writing-mode: vertical-rl; }
+      .station .right .stations span.curStation {
+        color: #DC4040; }
+
+.post {
+  width: 100%; }
+  .post img {
+    width: 100%; }

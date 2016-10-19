@@ -1,0 +1,74 @@
+/* reset*/
+*{
+	margin: 0;
+	padding: 0;
+} 
+
+/* all  settings */
+.wrapper{
+	min-height: 800px;
+	min-width: 800px;
+	text-align: center;
+}
+
+/* 头部样式 */
+.header{
+	background: #F4D6E0;
+	height: 180px;
+}
+
+
+/* 
+双飞翼布局开始 */
+.article{
+	background:green;
+	height: 600px;
+	overflow: hidden;
+/* 	padding-left: 150px;
+padding-right: 100px; */
+}
+/* 左边样式 */
+.article .left{
+	float: left;
+	width: 240px;
+	height: 16px;
+	margin-bottom: -9999px;
+	padding-bottom: 9999px;
+	margin-left: -240px;
+	background-color:#EFE4B0; 
+	/* position: relative;
+	left: -150px; */
+}
+/* 右边样式 */
+.article .right{
+	float: left;
+	width: 200px;
+	/* height: 16px; */
+	margin-bottom: -9999px;
+	padding-bottom: 9999px;
+	margin-left: -100%;
+	background-color: #C8BFE7;
+	/* position: relative;
+	right: -100px; */
+}
+
+/* 主内容区域 */
+.article .middle{
+	float: left;
+	width: 100%;
+	margin-bottom: -9999px;
+	padding-bottom: 9999px;
+	background-color: #70AAA9;
+}
+.inner{
+margin-left: 240px;
+margin-right: 200px;
+}
+/* 双飞翼布局结束 */
+
+
+/* 脚部样式 */
+.footer{
+	background-color: #F4D6E0;
+	height: 150px;
+}

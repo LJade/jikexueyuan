@@ -1,0 +1,247 @@
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* container  setting start */
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin-left: 78px;
+}
+
+.container div {
+    position: absolute;
+    background-color: #fff;
+}
+
+
+/* all container  end */
+
+
+/* the  head of octopus  */
+
+.cicle-head {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    left: 20px;
+    z-index: 3;
+}
+
+
+/* the  left eye of octopus  start */
+
+.left-eye {
+    width: 32px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #000!important;
+    top: 76px;
+    left: 40px;
+    z-index: 4;
+}
+
+.left-eye-inner {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top: 4px;
+    left: 5px;
+    animation: animation 0.6s linear 0s infinite;
+    -webkit-animation: animation 0.6s linear 0s infinite;
+    -moz-animation: animation 0.6s linear 0s infinite;
+}
+
+
+/* the  left eye of octopus  end */
+
+
+/* the  right eye of octopus  start */
+
+.right-eye {
+    width: 32px;
+    height: 31px;
+    border-radius: 50%;
+    background-color: #000!important;
+    top: 69px;
+    left: 109px;
+    z-index: 4;
+}
+
+.right-eye-inner {
+    width: 15px;
+    height: 16px;
+    border-radius: 50%;
+    top: 4px;
+    left: 5px;
+    animation: animation 0.6s linear 0s infinite;
+    -webkit-animation: animation 0.6s linear 0s infinite;
+    -moz-animation: animation 0.6s linear 0s infinite;
+}
+
+
+/* the  right eye of octopus  end */
+
+
+/* foot style  start*/
+
+.foot-one {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    z-index: 1;
+    top: 110px;
+    left: 10px;
+}
+
+.foot-two {
+    width: 49px;
+    height: 71px;
+    border: 3px solid #000;
+    z-index: 1;
+    border-radius: 50%;
+    top: 119px;
+    left: 22px;
+    transform: rotate(16deg);
+}
+
+.foot-three {
+    width: 48px;
+    height: 60px;
+    border: 3px solid #000;
+    z-index: 5;
+    border-radius: 70%;
+    top: 150px;
+    left: 59px;
+    transform: rotate(5deg);
+}
+
+.foot-four {
+    width: 53px;
+    height: 70px;
+    border: 3px solid #000;
+    border-radius: 50%;
+    z-index: 4;
+    transform: rotate(-36deg);
+    top: 139px;
+    left: 105px;
+}
+
+.foot-five {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #000;
+    z-index: 2;
+    border-radius: 50%;
+    left: 150px;
+    top: 141px;
+}
+
+.foot-six {
+    width: 40px;
+    height: 40px;
+    border-radius: 160px;
+    border: 3px solid #000;
+    z-index: 1;
+    top: 122px;
+    left: 162px;
+    transform: rotate(-75deg);
+}
+
+
+/* foot style  end*/
+
+
+/* the decoration of mask start */
+
+.mask {
+    width: 130px;
+    height: 50px;
+    border-radius: 48%;
+    z-index: 10;
+    top: 122px;
+    left: 49px;
+}
+
+.small-mask-one,
+.small-mask-two {
+    width: 8px;
+    height: 8px;
+    z-index: 11;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.small-mask-one {
+    top: 163px;
+    left: 60px;
+    transform: rotate(109deg);
+}
+
+.small-mask-two {
+    top: 164px;
+    left: 164px;
+    transform: rotate(-62deg);
+}
+
+
+/* the decoration of mask end */
+
+
+/* add  the  animation   start*/
+@keyframes animation {
+    0% {
+        top: 4px;
+        left: 5px;
+    }
+    50% {
+        top: 6px;
+        left: 7px;
+    }
+    100% {
+        top: 4px;
+        left: 5px
+    }
+}
+@-webkit-keyframes animation {
+    0% {
+        top: 4px;
+        left: 5px;
+    }
+    50% {
+        top: 6px;
+        left: 7px;
+    }
+    100% {
+        top: 4px;
+        left: 5px
+    }
+}
+@-moz-keyframes animation {
+    0% {
+        top: 4px;
+        left: 5px;
+    }
+    50% {
+        top: 6px;
+        left: 7px;
+    }
+    100% {
+        top: 4px;
+        left: 5px
+    }
+}
+
+
+/* add  the  animation   end*/

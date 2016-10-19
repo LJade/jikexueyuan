@@ -1,0 +1,98 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url('../imgs/beijing.gif') repeat;
+	padding: 20px;
+	font-size: 12px;
+}
+.wrapper{
+	width: 50%;
+	margin: 0 auto;
+	border-radius: 20px;
+	background-color: #fff;
+	padding: 10px 30px;
+	position: relative;
+	min-width: 780px;
+	min-height: 800px;
+}
+header .logo{
+	width: 180px;
+	height: 76px;
+	cursor: pointer;
+	background: url('../imgs/qdjjlogo.gif') no-repeat;
+}
+header .headerTag{
+	position: absolute;
+	right: 20px;
+	top: 70px;
+}
+header .headerTag a{
+	color: #FF0099;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+section{
+margin: 10px 0;
+}
+section p{
+	font-size: 24px;
+	text-align: center;
+}
+section fieldset{
+	margin: 20px 0;
+	border: 1px solid #666;
+	padding: 20px 30px;
+	text-align: left;
+	line-height: 24px;
+}
+section fieldset legend{
+	font-size: 18px;
+	color: #999;
+}
+section fieldset input{
+	width: 200px;
+	line-height: 16px;
+}
+section fieldset input[type="radio"],input[type="checkbox"]{
+	width: 28px;
+	vertical-align: text-bottom;
+}
+section fieldset>div{
+	margin: 15px 0;
+}
+section .formGroup textarea,#list{
+	vertical-align: text-top;
+}
+section .formGroup{
+
+}
+section .submitBtn{
+	text-align: center;
+	margin-top: 40px;
+}
+section .submitBtn button,input[type="submit"]{
+width: 100px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+vertical-align: text-bottom;
+margin: auto 30px;
+}
+
+
+footer{
+overflow: hidden;
+}
+footer p{
+color: #333;
+margin: 30px auto;
+width: 300px;
+white-space: nowrap;
+border-collapse: collapse;
+}
+footer p span{
+	color: #666;
+}

@@ -1,0 +1,28 @@
+*{
+    padding:0;
+    margin: 0;
+}
+#container{
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+.box{
+    position: relative;
+    float: left;
+}
+.content{
+    padding: 10px;
+    border: 2px solid #E2E2E2;
+    box-shadow: 0 0 5px #000;
+    border-radius: 5px;
+}
+.content img{
+    width: 200px;
+    height: auto;
+}
+/*
+1、审查元素时，为什么此时的#container，只有宽度没有高度？
+2、因为当前窗口尺寸不确定，所以一行显示的图片也是不确定的，因此，让所有图片居中如何实现?
+3、如果想让图片数量跟随窗口宽度变化的时候，相应地每行图片数量会增多，这个怎么做
+*/

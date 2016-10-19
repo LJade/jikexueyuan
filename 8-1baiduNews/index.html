@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="lib/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>百度新闻</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+       <div class="row">
+         <div class="col-xs-12">
+           <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist" id="type">
+            <li role="presentation" class="active"><a href="#jingxuan" role="tab" data-toggle="tab" data-type="jingxuan">精选</a></li>
+            <li role="presentation"><a href="#baijia" role="tab" data-toggle="tab" data-type="baijia">百家</a></li>
+            <li role="presentation"><a href="#yule" role="tab" data-toggle="tab" data-type="yule">娱乐</a></li>
+            <li role="presentation"><a href="#shehui" role="tab" data-toggle="tab" data-type="shehui">社会</a></li>
+            <li role="presentation"><a href="#junshi" role="tab" data-toggle="tab" data-type="junshi">军事</a></li>
+        </ul>
+         </div>
+       </div>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="jingxuan">
+            </div>
+            <div role="tabpanel" class="tab-pane" id="baijia"></div>
+            <div role="tabpanel" class="tab-pane" id="yule"></div>
+            <div role="tabpanel" class="tab-pane" id="shehui"></div>
+            <div role="tabpanel" class="tab-pane" id="junshi"></div>
+        </div>
+    </div>
+</body>
+<script src="lib/jquery-2.1.4.min.js"></script>
+<script src="lib/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+<script src="script/baidu.js"></script>
+<script type="text/javascript">
+$(function() {
+    baidu.init();
+});
+</script>
+
+</html>

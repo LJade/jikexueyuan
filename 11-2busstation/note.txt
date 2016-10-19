@@ -1,0 +1,15 @@
+1、使用gulp编译sass来完成样式
+
+2、数据是自己在routes/station/index中伪造的，传到前台Jade渲染
+
+3、没找到附近的站牌，最近没出门，网上找了一个，尽量做得近似，见图busStation.jpg，我这边做的效果如图demo.png
+
+4、terminal中运行supervisor ./bin/www
+访问路由：http://localhost:3000/home
+审查元素手机iphone6下看下效果
+
+5、再开一个terminal 运行gulp可生成css
+
+6、缺点：
+如果车站太多放不下，站名很长，也会放不下，可采取方案，站名做成可以横向滚动
+下一站和当前站站名很长可以采取减小字号等，这是js做还是？

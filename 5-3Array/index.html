@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*随意定义一个数组*/
+    var arr   = ["a","x","b","d","m","a","k","m","p","j","a"];
+
+    /*调用函数返回*/
+    getMax(arr);
+
+    /*随意定义一个数组*/
+    var arr1   = ["a","x","b","d","m","a","k","m","p","j","a","m","m","m","m","m","m"];
+    /*调用函数返回*/
+    getMax(arr1);
+
+
+
+    /*函数代码块,传入数组*/
+function getMax(array){
+
+/*创建两个对象用来保存遍历的结果，
+count表示遍历的元素及其相应出现的个数，
+position对象记录遍历元素的出现位置
+* */
+
+    var count = {};
+    var position   = {};
+
+    //遍历传进的数组参数
+    array.forEach(function(value, index){
+        if(count[value]){  //当前元素是否已经存在
+            count[value] ++;   //存在则计数器加1
+            position[value] += ","+index;   //记录这个位置的index值
+        } else {
+            count[value] = 1;   //不存在就出现1次
+            position[value]   = ""+index;
+        }
+    });
+
+    /*打印一下这个对象*/
+    console.log(count);
+    console.log(position);
+
+    //从出现次数的对象中找到次数最多的元素
+    var max = 0;
+    var ele = "";
+    for(var i in count){
+        if(count[i] > max ){
+            max    = count[i];
+            ele = i;
+        }
+    }
+
+    console.log("出现最多的元素是：" + ele);
+    console.log("其位置为：" + position[ele]);
+
+}
+
+</script>
+</body>
+</html>

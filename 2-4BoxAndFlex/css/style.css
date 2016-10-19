@@ -1,0 +1,107 @@
+/* 清空样式 */
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/* 传统盒子模型 开始 */
+.box .commonBox,.specialBox{
+	width: 100px;
+	height: 100px;
+	padding: 20px;
+	border: 5px solid #666;
+	margin: 20px;
+}
+.box .commonBox{
+	box-sizing: content-box;
+	background-color: #DA5959;
+}
+.box .specialBox{
+	box-sizing: border-box;
+	background-color: #8AD0BA;
+}
+/* 传统盒子模型 结束 */
+
+/* 多栏开始 */
+.column{
+padding: 30px;
+column-count:3;
+column-gap:30px;
+column-rule-style:dashed;
+column-rule-color:#666;
+column-width:140px;
+}
+/* 多栏结束 */
+
+/* 旧版伸缩盒 */
+.flexBox{
+
+}
+.boxSub{
+	display:-webkit-box;
+	display:-moz-box;
+	width: 100px;
+	height: 100px;
+	background-color: #4396CB;
+	-webkit-box-pack:center;
+	-webkit-box-align: center;
+}
+.boxSub img{
+	width: 50px;
+}
+/* 旧版伸缩盒结束 */
+
+/* 新版伸缩盒开始 */
+.newFlex{
+	display: flex;
+	list-style-type: none;
+	flex-direction:row;
+	width: 600px;
+}
+.newFlex li{
+	display: inline-block;
+/* 	float: left; */
+	line-height: 40px;
+}
+.newFlex :nth-child(1){
+	flex:1;
+	background-color: #ccc;
+}
+.newFlex :nth-child(2){
+	flex:2;
+	background-color: #ff0000;
+}
+.newFlex :nth-child(3){
+	flex:1;
+	background-color: #00ff00;
+}
+.newFlex :nth-child(4){
+	flex:2;
+	background-color: #0000ff;
+}
+
+.newFlexCol{
+	display: flex;
+	flex-direction:column;
+	list-style-type: none;
+	margin: 50px 0;
+	width: 600px;
+	height: 400px;
+}
+.newFlexCol :nth-child(1){
+	flex:1;
+	background-color: #ccc;
+}
+.newFlexCol :nth-child(2){
+	flex:2;
+	background-color: #ff0000;
+}
+.newFlexCol :nth-child(3){
+	flex:1;
+	background-color: #00ff00;
+}
+.newFlexCol :nth-child(4){
+	flex:2;
+	background-color: #0000ff;
+}
+/* 新版伸缩盒结束 */

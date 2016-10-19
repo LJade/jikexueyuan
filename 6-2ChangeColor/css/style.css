@@ -1,0 +1,210 @@
+body{
+    font:14px/100% arial,"Hiragino Sans GB","Hiragino Sans GB W3",宋体;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, textarea, p, th, td {
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+header{
+    width: 100%;
+    border-bottom: 1px solid #F3F3F3;
+}
+header:nth-child(2){
+    border-bottom: none;
+}
+#hTop{
+    width: 1200px;
+    height: 60px;
+    position: relative;
+
+    margin: 0 auto;
+}
+#hTop .logo{
+    position: absolute;
+    width: 190px;
+    height: 60px;
+    background: url("../images/logo.png") no-repeat;
+}
+#hTop a{
+    color: #999;
+    font-size: 12px;
+    text-decoration: none;
+}
+#hTop .hTop_list1,.hTop_list2{
+    position: absolute;
+
+    line-height: 60px;
+}
+#hTop ul li{
+    float: left;
+    padding:0 10px;
+}
+#hTop .hTop_list1{
+    left: 210px;
+}
+#hTop .hTop_list2{
+    right: 0;
+
+}
+
+#hBottom{
+    width: 1200px;
+    height: 70px;
+    margin: 25px auto 0;
+    position: relative;
+}
+#hBottom .baiduLogo{
+    position: absolute;
+    width: 130px;
+    height: 45px;
+    background: url("../images/index_widthlg.png") 0 -210px;
+    left: 140px;
+}
+#hBottom .searchBox{
+    position: absolute;
+    left: 290px;
+    width: 660px;
+    height: 45px;
+    border: 1px solid #666666;
+    line-height: 45px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+.searchBox span{
+    color: #999999;
+}
+.searchBox input{
+    font-size: 18px;
+    height: 45px;
+    width: 504px;
+border: none;
+}
+.searchBox button{
+    width: 120px;
+    height: 47px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fcfcfc), to(#e8e8e8));
+    outline: none;
+    border: none;
+    border-left: 1px solid #666666;
+    cursor: pointer;
+    font-size: 18px;
+    color: #000;
+}
+#hBottom .searchTag{
+    position: absolute;
+    left: 290px;
+    top: 55px;
+}
+#hBottom .searchTag li{
+    float: left;
+    padding: 0 10px;
+
+}
+#hBottom .searchTag li:nth-child(1){
+    padding-left: 0;
+}
+#hBottom .searchTag li a{
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+}
+#hBottom .searchTag li:nth-child(4) a{
+    color:#f50;
+}
+#skin{
+    position: absolute;
+    left: 1000px;
+    top: 10px;
+}
+#skin button{
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 5px;
+}
+#skin button:nth-child(1){
+    background: #0aa770;
+}
+#skin button:nth-child(2){
+    background: #E49DB5;
+}
+#skin button:nth-child(3){
+    background: #3599B9;
+}
+#skin button:nth-child(4){
+    background: #FD9E5D;
+}
+nav {
+    width:1200px;
+    height: 40px;
+    margin: 25px auto 0;
+    position: relative;
+}
+nav ul#menu{
+    position: absolute;
+}
+#menu li{
+    float: left;
+    background: #0aa770;
+    height: 40px;
+    width: 111px;
+    line-height: 40px;text-align: center;
+}
+#menu li:nth-child(1){
+    width: 88px;
+}
+#menu li:hover{
+    background: #08865A;
+}
+#menu li a{
+    font-size: 18px;
+
+    color: #ffffff;
+}
+#siteTag{
+    width: 1200px;
+    height: 230px;
+    margin: 10px auto 0;
+    position: relative;
+}
+#siteTag .list_left{
+    width: 285px;
+    height: 220px;
+    background: url("../images/aoyun.png") no-repeat;
+    position: absolute;
+}
+#siteTag .list_right{
+    width:900px;
+    height:225px;
+    position: absolute;
+    right: 0;
+    border: 1px solid #84D7BA;
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+#siteTag .list_right ul li{
+    float: left;
+    width: 139px;
+    text-align: left;
+    line-height: 30px;
+}
+#siteTag .list_right ul li a{
+    letter-spacing: 1px;
+    color: #333333;
+}
+#siteTag .list_right ul li a:hover{
+    text-decoration: underline;
+    color: #f50;
+}
+#siteTag .list_right ul:nth-child(7) li a {
+    color: #0aa770;
+}
+.red-font{
+    color: #f50!important;
+}

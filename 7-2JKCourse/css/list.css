@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+@import url("style.css");
+/*list style*/
+ul.lessonList{
+    position: relative;
+    margin-top: 10px;
+    width: 780px;
+    height: 2650px;
+}
+
+ul.lessonList li{
+    width: 780px;
+    height:100px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    position: relative;
+}
+ul.lessonList li .con-img{
+    width: 185px;
+    height: 100px;
+    float: left;
+}
+.lessonList li .con-img img{
+    width: 100%;
+}
+.lessonList .lesson-bottom{
+    float: left;
+    width: 580px;
+    height: 100px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.lessonList .lesson-bottom .lesson-intro{
+    font-size: 12px;
+    color: #808080;
+    line-height: 15px;
+    height: 30px;
+    overflow: hidden;
+    text-overflow: clip;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+    margin:10px 0;
+}
+a.lesson-title:hover{
+    color: #35b558;
+}
+.lessonList .lesson-bottom .lesson-info{
+    font-size: 12px;
+    color: #808080;
+
+}
+.lesson-bottom .lesson-info p{
+    display: inline-block;
+}
+.lesson-bottom .lesson-info .poeple{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+#main{
+    height: 2750px;
+}

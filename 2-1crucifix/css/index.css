@@ -1,0 +1,86 @@
+body,
+div,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+}
+
+.container div{
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 2px 1px #666;
+    position: absolute;
+}
+
+div.one {
+    background-color: #C46767;
+    top: 0;
+    left: 100px;
+}
+
+div.two {
+    background-color: #6E6180;
+    top: 100px;
+    left: 200px;
+}
+
+div.three {
+    background-color: #3E8044;
+    top: 200px;
+    left: 100px;
+}
+
+div.four {
+    background-color: #BD5440;
+    top: 100px;
+    left: 0;
+}
+
+div.five {
+    background-color: #837BAA;
+    left: 100px;
+    top: 100px;
+}
+
+/* .outer {
+    display: table;
+} */
+
+.inner {
+  /*   display: table-cell; */
+    text-align: center;
+   /*  vertical-align: middle; */
+	line-height: 100px;
+}
+
+
+/* 总结：
+	 margin: 0 auto;针对其内部div居中，写里面，不是这里
+	 text-align: center;针对文字居中*/
+
+
+/* 
+问题:
+网上使用container div 统一absolute定位，最后分别使用margin的四个方向进行定位形成
+十字架，这样与我使用top  left定位，哪个更好?有什么区别？
+
+
+中间的小icon，position定位和display：table-cell出现了冲突，这是为什么，如果取消position定位
+就会水平垂直居中，但是加上的话，vertical-align：middle失效，为什么?
+
+
+还有一个问题，父层display：table，子层display：table-cell，必须两者结合起来用吗（教学视频参考）？我单独使用table-celly也可以用
+
+
+现在使用了line-height暂时让其垂直居中，希望老师能解决一下我的问题
+ */

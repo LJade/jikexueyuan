@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>表单demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo"></div>
+            <div class="headerTag">
+                <a href="">注册</a>
+                <a href="">登录</a>
+                <a href="">收藏本站</a>
+            </div>
+        </header>
+        <section>
+        <p>新教员注册</p>
+            <form action="" method="post">
+                <fieldset>
+                    <legend>基本信息</legend>
+                    <div class="formGroup">
+                        <label for="username">姓名</label>
+                        <input type="text" name="username" id="username" required="required" autofocus="autofocus">
+                    </div>
+                    <div class="formGroup">
+                        <label>性别</label>
+                        <input type="radio" name="sex" value="男" id="male">
+                        <label for="male">男</label>
+                        <input type="radio" name="sex" value="女" id="female">
+                        <label for="female">女</label>
+                    </div>
+                    <div class="formGroup">
+                        <label for="age">年龄</label>
+                        <input type="number" name="age" min="20" max="55" id="age">
+                    </div>
+                    <div class="formGroup">
+                        <label for="email">邮箱</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="formGroup">
+                        <label for="phone">手机</label>
+                        <input type="text" name="phone" id="phone" maxlength="11" required="required">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>职业信息</legend>
+                    <div class="formGroup">
+                        <label for="text">自我介绍</label>
+                        <textarea name="text" id="text" cols="30" rows="10" placeholder="请在此进行详细自我介绍"></textarea>
+                    </div>
+                    <div class="formGroup">
+                        <label>职业类型</label>
+                        <input type="checkbox" name="type" id="total">
+                        <label for="total">全职</label>
+                        <input type="checkbox" name="type" id="part">
+                        <label for="part">兼职</label>
+                        <input type="checkbox" name="type" id="college">
+                        <label for="college">在校大学生</label>
+                    </div>
+                    <div class="formGroup">
+                        <label for="file">上传图片</label>
+                        <input type="file" name="file" id="file">
+                    </div>
+                    <div class="formGroup">
+                        <label for="list">教学类型</label>
+                        <select multiple id="list">
+                            <option value="语文">语文</option>
+                            <option value="英语">英语</option>
+                            <option value="数学">数学</option>
+                            <option value="物理">物理</option>
+                            <option value="化学">化学</option>
+                            <option value="生物">生物</option>
+                            <option value="爱他">其他</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label for="select">目前居住地</label>
+                        <select id="select">
+                            <option value="市北区">市北区</option>
+                            <option value="市南区" selected="selected">市南区</option>
+                            <option value="李沧区">李沧区</option>
+                            <option value="崂山区">崂山区</option>
+                            <option value="四方区">四方区</option>
+                            <option value="黄岛">黄岛</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label for="date">到岗时间</label>
+                        <input type="date" name="date" id="date" />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>确认信息</legend>
+                    <div>
+                        <label for="password">密码</label>
+                        <input type="password" name="password" id="password" required="required" placeholder="请输入密码">
+                    </div>
+                    <div>
+                        <label for="repassword">确认密码</label>
+                        <input type="password" name="repassword" id="repassword" required="required" placeholder="请确认密码">
+                    </div>
+                    <div class="submitBtn">
+                        <button type="reset">重置</button>
+                        <input type="submit" value="提交">
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <footer>
+            <p><span>Copyright © 2003～2008 </span>版权所有 青岛家教网</p>
+        </footer>
+    </div>
+</body>
+
+</html>
